@@ -404,7 +404,7 @@ class Bond(FixedIncome):
         sol = root(lambda x: Bond.dirty_price(settlement, maturity, rate, x, redemption, frequency, basis) - dirty_price_target, 
             [0.01], *args, **kwargs)
         yld = sol.x[0]
-        assert yld >= 0 and yld <= 100
+        #assert yld >= 0 and yld <= 100
         return yld
 
     def _intermediate_values(self):
